@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Collection</title>
+    <style>
+        /* 在这里添加 CSS 样式 */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 15px;
+        }
+        header h1 {
+            margin: 0;
+            padding: 0 15px;
+        }
+        nav {
+            padding: 0 15px;
+        }
+        nav a {画枠
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        main h2 {
+            margin-top: 0;
+        }
+        main ul {
+            list-style: none;
+            padding: 0;
+        }
+        main ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Movie Collection!</h1>
+        <nav>
+            <a href="{% url 'movies:register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'movies:user_home' %}">My Collections</a>
+            <form action="{% url 'movies:search_movies' %}" method="get">
+                <input type="text" name="query" placeholder="Search movies...">
+                <input type="submit" value="Search">
+            </form>
+        </nav>
+    </header>
+    <main>
+        <h2>Latest Movies</h2>
+        <ul>
+            {% for movie in movies %}
+            <li>
+                <a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

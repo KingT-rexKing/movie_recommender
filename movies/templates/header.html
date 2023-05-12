@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQFZLP PROJECT</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'login' %}">Login</a> |
+        <a href="{% url 'movies:register' %}">Register</a>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

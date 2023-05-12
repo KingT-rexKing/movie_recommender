@@ -1,0 +1,8 @@
+<h1>{{ movie.title }}</h1>
+<p>Actors: {{ movie.actors }}</p>
+<p>Runtime: {{ movie.runtime }}</p>
+<p>Year: {{ movie.year }}</p>
+<p>Genre: {{ movie.genre }}</p>
+{% if request.user.is_authenticated %}
+    <a href="{% url 'add_movie_to_collection' collection_id=request.user.collection.id movie_id=movie.id %}">Add to collection</a>
+{% endif %}

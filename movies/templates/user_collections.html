@@ -1,0 +1,6 @@
+<h1>我的收藏夹</h1>
+<ul>
+    {% for collection in collections %}
+        <li><a href="{% url 'collection_detail' collection_id=collection.id %}">{{ collection.name }}</a></li>
+    {% endfor %}
+</ul>

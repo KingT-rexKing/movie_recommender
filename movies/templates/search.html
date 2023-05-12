@@ -1,0 +1,11 @@
+{% for movie in movies %}
+    <div>
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.actors }}</p>
+        <p>{{ movie.release_date }}</p>
+        <p>{{ movie.duration }} 分钟</p>
+        <p>{{ movie.year }}</p>
+        <p>{{ movie.genre }}</p>
+        <a href="{% url 'add_movie_to_collection' collection_id=<你的收藏夹ID> movie_id=movie.id %}">添加到收藏夹</a>
+    </div>
+{% endfor %}

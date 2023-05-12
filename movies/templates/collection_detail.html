@@ -1,0 +1,6 @@
+<h1>{{ collection.name }}</h1>
+<ul>
+    {% for movie in collection.movies.all %}
+        <li>{{ movie.title }}</li>
+    {% endfor %}
+</ul>
